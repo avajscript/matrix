@@ -1,0 +1,49 @@
+$black-a: #121212;
+$black-b: #282828;
+$black-c: #2e2d2d;
+$black-d: #383838;
+$white-a: #fff;
+$grey-a: #717171;
+$grey-b: #979797;
+$green-a: #03dac5;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+body {
+  background-color: $black-b;
+}
+h1 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 2rem;
+  color: $white-a;
+  line-height: 3rem;
+}
+
+h2 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: $white-a;
+}
+
+p {
+  color: $white-a;
+  font-family: Roboto;
+}
+
+.icon {
+  float: right;
+  transition: transform 0.5s ease-out;
+  * {
+    color: $green-a;
+  }
+}
+
+.clear-search {
+  cursor: pointer;
+}
