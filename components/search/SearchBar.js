@@ -84,6 +84,7 @@ export default function SearchBar(props) {
     }).map((article) => {
       return (
         <SearchLine
+          key={nanoid()}
           title={article.title.replace(text, `<b>${text}</b>`)}
           clickQuery={props.clickQuery}
           colors={props.colors}
