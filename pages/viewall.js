@@ -26,7 +26,7 @@ export const getStaticProps = async () => {
     }
   `;
   const data = await graphQLClient.request(query);
-  const articles = data.catagory.article;
+  const articles = data.articles;
   return {
     props: {
       articles,
@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
   };
 };
 const ViewAllPage = ({ articles }) => {
-  return <ViewAll />;
+  return <ViewAll articles={articles} />;
 };
 
 export default ViewAllPage;

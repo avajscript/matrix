@@ -6,6 +6,12 @@ import { nanoid } from "nanoid";
 const ArticleHolderElem = styled.div`
   width: 50%;
   margin: 0 auto;
+  @media screen and (max-width: 992px) and (min-width: 769px) {
+    margin-left: 40%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export default function ArticleHolder(props) {

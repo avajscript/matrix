@@ -8,12 +8,18 @@ const SubArticleElem = styled.li`
   background-image: url(${(props) => props.url});
   background-size: contain;
   background-position: -50%;
+  position: relative;
   cursor: pointer;
   margin-bottom: 1rem;
   border: 2px solid ${(props) => props.colors.blackA};
+  h2 {
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
   &:hover {
-    h2,
-    p {
+    h2 {
       color: ${(props) => props.colors.greenA};
     }
   }
@@ -35,7 +41,6 @@ export default function SubArticle(props) {
       <a href={`#${props.fullTitle}`}>
         <TextDiv>
           <h2> {props.title} </h2>
-          <p> {props.subTitle} </p>
         </TextDiv>
       </a>
     </SubArticleElem>

@@ -16,6 +16,9 @@ const SidebarCont = styled.div`
   position: fixed;
   background-color: ${(props) => props.colors.blackD};
   transition: left 0.5s ease;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const SidebarElem = styled.div`
   width: 100%;
@@ -55,15 +58,15 @@ const ToggleNavbar = styled.div`
 
 export default function Sidebar(props) {
   const [open, setOpen] = React.useState(true);
-  const sideArticles = Articles.map((article, index) => {
+  const sideArticles = props.articles.map((article, index) => {
+    console.log(props);
     return (
       <SubArticle
         key={nanoid()}
         colors={props.colors}
         title={article.briefTitle}
-        subTitle={article.subTitle}
-        url={article.url}
         fullTitle={article.title}
+        url={article.coverImage.url}
       />
     );
   });
