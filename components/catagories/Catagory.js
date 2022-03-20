@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Link from "next/link";
 const CatagoryCont = styled.div`
   position: relative;
   width: 100%;
@@ -38,11 +38,13 @@ const Title = styled.h2`
 `;
 export default function Catagory(props) {
   return (
-    <CatagoryCont url={props.url}>
-      <Title color={props.colors.greenA} bgColor={props.colors.blackA}>
-        {" "}
-        {props.title}{" "}
-      </Title>
-    </CatagoryCont>
+    <Link href={`/catagories/${props.title}`}>
+      <CatagoryCont url={props.url}>
+        <Title color={props.colors.greenA} bgColor={props.colors.blackA}>
+          {" "}
+          {props.title}{" "}
+        </Title>
+      </CatagoryCont>
+    </Link>
   );
 }

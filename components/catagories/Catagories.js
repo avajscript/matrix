@@ -19,7 +19,17 @@ const CatagoriesCont = styled.div`
   }
 `;
 export default function Catagories(props) {
-  const catagoryElems = Data.map((catagory) => {
+  const catagoryElems = props.catagories.map((catagory) => {
+    return (
+      <Catagory
+        key={nanoid()}
+        url={catagory.coverImage.url}
+        title={catagory.title}
+        colors={COLORS}
+      />
+    );
+  });
+  /*const catagoryElems = Data.map((catagory) => {
     return (
       <Catagory
         key={nanoid()}
@@ -28,6 +38,6 @@ export default function Catagories(props) {
         colors={COLORS}
       />
     );
-  });
+  });*/
   return <CatagoriesCont>{catagoryElems}</CatagoriesCont>;
 }

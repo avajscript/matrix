@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 const ArticleElem = styled.div`
   width: 100%;
   cursor: pointer;
@@ -29,12 +30,13 @@ const HeadPara = styled.p`
 
 export default function Article(props) {
   return (
-    <ArticleElem colors={props.colors} id={props.title}>
-      <h1> {props.title} </h1>
-      <HeadPara colors={props.colors}> Published {props.date} </HeadPara>
-      <HeadPara colors={props.colors}> Written By {props.author} </HeadPara>
-      <img src={props.url} />
-      <p>{props.content}</p>
-    </ArticleElem>
+    <Link href={`/article/${props.title}`}>
+      <ArticleElem colors={props.colors} id={props.title}>
+        <h1> {props.title} </h1>
+        <HeadPara colors={props.colors}> Published {props.date} </HeadPara>
+        <HeadPara colors={props.colors}> Written By {props.author} </HeadPara>
+        {props.url && <img src={props.url} />}
+      </ArticleElem>
+    </Link>
   );
 }
