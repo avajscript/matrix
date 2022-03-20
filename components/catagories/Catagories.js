@@ -29,15 +29,6 @@ export default function Catagories(props) {
       />
     );
   });
-  /*const catagoryElems = Data.map((catagory) => {
-    return (
-      <Catagory
-        key={nanoid()}
-        url={catagory.image}
-        title={catagory.mainCatagory}
-        colors={COLORS}
-      />
-    );
-  });*/
+
   return <CatagoriesCont>{catagoryElems}</CatagoriesCont>;
 }
