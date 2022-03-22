@@ -16,6 +16,7 @@ export default function NavBar(props) {
       <NavItem colors={props.colors} link="/search" title="Search" />
       <NavItem colors={props.colors} link="/viewall" title="View All" />
       <NavItem colors={props.colors} link="/catagories" title="Catagories" />
+      <NavItem colors = {props.colors} link = '/about' title = 'About' />
     </NavbarElem>
   );
 }
