@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import COLORS from "../../Data/colors";
-import Data from "../../Data/Articles";
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
+import Data from '../../Data/Articles'
 import Article from "./Article";
 import {nanoid} from 'nanoid';
 

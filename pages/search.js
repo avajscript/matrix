@@ -11,11 +11,34 @@ export const getStaticProps = async () => {
       Authorization:process.env.GRAPH_CMS_TOKEN,
     }
   })
+  const query = gql`
+  query {
+    articles {
+      title
+      author
+      date
+      coverImage {
+        url
+      }
+      description
+      briefTitle
+    }
+  }
+  `
+  const data = await graphQLClient.request(query);
+  const articles = data.articles;
+  return{
+    props:{
+      articles,
+    }
+  }
 }
-const SearchPage = () => {
+const SearchPage = ({articles}) => {
+  console.log('xxxxx');
+  console.log(articles);
   return (
     <div>
-      <Search colors={COLORS} />
+      <Search colors={COLORS} articlesImport = {articles} />
    
     </div>
   );
