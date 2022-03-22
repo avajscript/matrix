@@ -87,7 +87,7 @@ export default function SearchBar(props) {
           value={props.searchText}
           onChange={props.updateText}
           onFocus={focusSearch}
-          /*onBlur={loseFocusSearch}*/
+          onBlur={loseFocusSearch}
         />
 
         <SearchIconHolder colors={props.colors} onClick={props.clearText}>
