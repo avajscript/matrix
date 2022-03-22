@@ -59,7 +59,7 @@ const ToggleNavbar = styled.div`
 export default function Sidebar(props) {
   const [open, setOpen] = React.useState(true);
   const sideArticles = props.articles.map((article, index) => {
-    console.log(props);
+  
     return (
       <SubArticle
         key={nanoid()}

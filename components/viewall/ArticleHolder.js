@@ -16,7 +16,7 @@ const ArticleHolderElem = styled.div`
 
 export default function ArticleHolder(props) {
   const articleElems = props.articles.map((article) => {
-    console.log(article.coverImage.url);
+    
     return (
       <Article
         key={nanoid()}
@@ -25,6 +25,7 @@ export default function ArticleHolder(props) {
         date={article.date}
         url={article.coverImage.url}
         content={article.content}
+        description = {article.description}
         colors={props.colors}
       />
     );
