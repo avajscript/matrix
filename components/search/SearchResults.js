@@ -15,6 +15,7 @@ export default function SearchResults(props) {
       <SearchBar
         searchText={props.searchText}
         updateText={props.updateText}
+        articleLines = {props.articleLines}
         clearText={props.clearText}
         search={props.search}
         clickQuery={props.clickQuery}

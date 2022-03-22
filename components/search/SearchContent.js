@@ -50,6 +50,7 @@ export default function SearchContent(props) {
   }
   function clickQuery(value) {
     const val = value;
+    console.log(val);
     setSearchText(prevValue=>{
       return val;
     });
@@ -130,6 +131,7 @@ export default function SearchContent(props) {
     <SearchResults
       articles = {articles}
       searchText={searchText}
+      articleLines = {articleLines}
       updateText={updateText}
       clearText={clearText}
       search={search}
