@@ -47,20 +47,19 @@ const SearchIconHolder = styled.div`
 
 export default function SearchBar(props) {
   const [focus, setFocus] = React.useState(false);
-  const [dataElems, setDataElems] = React.useState(
-    Data.map((item) => {
-      return (
-        <SearchLine
-          key={nanoid()}
-          title={item.title}
-          updateText={props.updateText}
-          loseFocus={loseFocusSearch}
-          clickQuery={props.clickQuery}
-          colors={props.colors}
-        />
-      );
-    })
-  );
+  
+  const dataLines = props.articleLines.map(line=>{
+    return (
+      <SearchLine
+        key={nanoid()}
+        title={line.title}
+       /* updateText={props.updateText}
+        loseFocus={loseFocusSearch}*/ // DELETE?
+    clickQuery={props.clickQuery} 
+        colors={props.colors}
+      />
+    )
+  });
 
   function focusSearch() {
     setFocus(true);
@@ -71,28 +70,7 @@ export default function SearchBar(props) {
     }, 75);
   }
 
-  function filterSearch(e) {
-    props.updateText(e);
-    const text = e.currentTarget.value;
-
-    const newData = Data.filter((article) => {
-      if (text === "") {
-        return true;
-      } else if (article.title.toLowerCase().includes(text.toLowerCase())) {
-        return true;
-      }
-    }).map((article) => {
-      return (
-        <SearchLine
-          key={nanoid()}
-          title={article.title.replace(text, `<b>${text}</b>`)}
-          clickQuery={props.clickQuery}
-          colors={props.colors}
-        />
-      );
-    });
-    setDataElems(newData);
-  }
+  
   return (
     <SearchbarForm colors={props.colors} onSubmit={props.search}>
       <ActualSearch>
@@ -107,21 +85,21 @@ export default function SearchBar(props) {
           name="" // removed name = search?
           colors={props.colors}
           value={props.searchText}
-          onChange={filterSearch}
+          onChange={props.updateText}
           onFocus={focusSearch}
-          onBlur={loseFocusSearch}
+          /*onBlur={loseFocusSearch}*/
         />
 
         <SearchIconHolder colors={props.colors} onClick={props.clearText}>
           <FontAwesomeIcon
-            onClick={props.clearText}
+            
             icon={faTimes}
             className="icon clear-search"
           ></FontAwesomeIcon>
         </SearchIconHolder>
       </ActualSearch>
 
-      {focus && <ul className="search-query-cont">{dataElems}</ul>}
+      {focus && <ul className="search-query-cont">{dataLines}</ul>}
     </SearchbarForm>
   );
 }

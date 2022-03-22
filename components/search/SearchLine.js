@@ -30,7 +30,7 @@ const SearchLineElem = styled.li`
   }
 `;
 export default function SearchLine(props) {
-  const [title, setTitle] = React.useState(props.title);
+  const [title, setTitle] = React.useState(props.title); //THIS MIGHT BREAK SOMETHING
   return (
     <SearchLineElem
       colors={props.colors}
@@ -42,11 +42,12 @@ export default function SearchLine(props) {
           {" "}
         </FontAwesomeIcon>
       </SearchIconHolder>
-      <p
+     {/* <p
         dangerouslySetInnerHTML={{
           __html: props.title,
         }}
-      ></p>
+      ></p> */}
+      <p>{props.title}</p>
     </SearchLineElem>
   );
 }
