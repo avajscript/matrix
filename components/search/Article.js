@@ -17,6 +17,7 @@ const ArticleElem = styled.div`
     h1,
     ${Date} {
       text-decoration: underline;
+      color:inherit;
     }
   }
 `;
