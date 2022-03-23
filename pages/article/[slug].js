@@ -5,14 +5,18 @@ import { gql, GraphQLClient } from "graphql-request";
 import Markdown from "markdown-to-jsx";
 
 const ArticleCont = styled.div`
-  background-color: ${(props) => props.colors.blackA};
+  background-color: white;
   width: 80%;
   margin: 2rem auto;
   border-radius: 0.5rem;
+  p{
+    color:black;
+  }
   @media screen and (max-width: 412px) {
     img {
       width: 100% !important;
     }
+    
   }
   @media screen and (max-width: 992px) {
     width: 100%;
@@ -25,6 +29,7 @@ const ArticleCont = styled.div`
     padding: 1rem 0;
     font-size: 2.5rem;
     text-align: center;
+    color:black;
   }
   .title {
     border-bottom: 2px solid ${(props) => props.colors.greenA};
