@@ -17,7 +17,6 @@ body {
   background-color: $black-b;
 }
 h1 {
-  font-family: Roboto;
   font-weight: 500;
   font-size: 2rem;
   color: $white-a;
@@ -25,12 +24,29 @@ h1 {
 }
 
 h2 {
-  font-family: Roboto;
   font-weight: 400;
   font-size: 1.6rem;
   color: $white-a;
 }
 
+h3{
+  font-size:1.5rem;
+}
+h4{
+  font-size:1.4rem;
+}
+h5{
+  font-size:1.3rem;
+}
+h6{
+  font-size:1.2rem;
+}
+a{color: $green-a;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
 p {
   color: $white-a;
   font-family: Roboto;
